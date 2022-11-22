@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JUST ASK!</title>
+    <link rel="stylesheet" href="{% static 'just/home_styles/Justask.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <section class="header">
+        <nav>
+            <a href="{% url 'just' %}"><img src="{% static "just/home_styles/images/logo.jpeg"%}"></a>
+            <div class="nav-links">
+                <ul>
+                    <li><a class="active" href="">HOME</a></li>
+                    <li><a href="{% url 'login' %}">SIGN IN/UP</a></li>
+                    <!--<li><a href="">BLOG</a></li>-->
+                    <li><a href="{% url 'just' %}">ABOUT US</a></li>
+                    <!--<li><a href="">CONTACT US</a></li>-->
+                </ul>
+            </div>
+        </nav>
+        <div class="center">
+            <h1 class="anim">CREATE YOUR<br>OWN BUSINESS</h1>
+        </div>
+
+    </section>
+
+    <div>
+        <img src="{% static 'just/home_styles/images/female.jpeg' %}" class="feature-img anim">
+    </div>
+    
+</body>
+</html>

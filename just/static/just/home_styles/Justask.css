@@ -1,0 +1,79 @@
+*{
+    margin: 0;
+    padding:0;
+    font-family: 'Roboto', sans-serif;
+
+}
+.header{
+    min-height: 100vh;
+    min-width: 100%;
+    background-image: url(images/business.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+nav{
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+}
+nav img{
+    width: 150px;
+}
+.nav-links{
+    flex:1;
+    text-align: right;
+}
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+.nav-links ul li a{
+    color: rgb(14, 5, 7);
+    text-decoration: none;
+    font-size: 20px;
+    padding: 6px 3px;
+    transition: 1.35s;
+}
+.nav-links ul li a.active,
+.nav-links ul li a:hover{
+    background: rgb(136, 218, 233);
+    border-radius: 2px;
+
+}
+.wrapper.center{
+    position: center;
+    top: 50%;
+    left: 55%;
+    transform: translate(-50%,-50%);
+
+}
+.center h1{
+    color: black;
+    font-size: 70px;
+    font-weight: bold;
+    width: 900px;
+    text-align: center;
+
+}
+.feature-img{
+    width:350px;
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+}
+.anim{
+    opacity: 0;
+    transform: translateY(30px);
+    animation:moveup 2s linear forwards ;
+
+}
+@keyframes moveup{
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}

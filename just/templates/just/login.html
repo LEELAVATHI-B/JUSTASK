@@ -1,0 +1,38 @@
+{% load static %}
+<!doctype html>
+<html>
+    <head>
+        <title>
+            Login Page
+        </title>
+        <link rel="stylesheet" type="text/css" href="{% static "just/login_styles/style.css" %}">
+        <body>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+            <ul>
+                
+                <li><a href="">HOME</a></li>
+                <li><a href="">SIGN IN/UP</a></li>
+                
+                <li><a href="{% url 'just' %}">ABOUT</a></li>
+                
+            </ul>
+        </div>
+        <i class="fa fa-bars" onclick ="showMenu()"></i>
+            <div class="loginbox">
+            <img src="{% static 'just/login_styles/images/logo.jpeg' %}" class="LOGO">
+                <h1>Login Here</h1>
+                <form method="post" action="{% url 'login' %}">
+                    {% csrf_token %}
+                    <p>Username</p>
+                    <input type="text" name="username" placeholder="Enter Username">
+                    <p>Password</p>
+                    <input type="password" name="password" placeholder="Enter Password">
+                    <input type="submit" name="" value="Login">
+                    <a href="forgot.html">Forgot Password?</a><br>
+                    <a href="{% url 'register' %}">Don't have an account</a>
+                </form>
+            </div>
+        </body>
+    </head>
+</html>

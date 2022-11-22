@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABOUT</title>
+    <link rel="stylesheet" href="{% static 'just/home_styles/style.css'%}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fasthand&family=Hind+Siliguri:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section class="sub-header">
+     <nav>
+            <a href="{% url 'just' %}"><img src="{% static 'just/home_styles/images/logo.jpeg' %}"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+            <ul>
+                
+                <li><a href="">HOME</a></li>
+                <li><a href="">SIGN IN/UP</a></li>
+                <li><a href="">ABOUT</a></li>
+                
+            </ul>
+        </div>
+        <i class="fa fa-bars" onclick ="showMenu()"></i>
+        </nav>
+        
+        <!---h1>ABOUT US</h1--->
+        
+        </section>
+        
+        <section class="about-us">
+            <div class="row">
+                <!---<div class="about-col">-->
+                    <h1>ABOUT US</h1>
+                    <!---p>fdtyruy</p
+                    <a href="" class="hero-btn red-btn">EXPLORE NOW</a>--->
+            <!---</div>--->
+            </div>
+            <div class="about-col">
+            <img src="{% static "just/home_styles/images/1.8.jpg"%}">
+            </div>
+        </section>
+
+        <section class="footer">
+            <!---<h2>ABOUT US</h2>--->
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fasthand&family=Hind+Siliguri:wght@500&display=swap" rel="stylesheet">
+            <p><br><br>&nbsp;This website is about giving the best plan , strategy to create your own business.<br>
+
+                &nbsp;If the user has an idea but doesn't know any other details about the project then this website will help him/her in setting up the<br>&nbsp;budget and also the ways to get succeed in his/her business. <br>
+                
+                &nbsp;Or else , if the user has a budget and doesn't know what type of business to do then this website will suggest business ideas<br>&nbsp;according to the budget he/she has set. Out of these the user can choose an idea. After the idea and budget is known ,<br>&nbsp;the website provides the best place to start your business with the best strategies so that the business would bring you profit.</p>
+                <div class="icon">
+                    <a href="#" class="fa fa-instagram"></a>
+                </div>
+            
+        
+</body>
+</html>
+
