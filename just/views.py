@@ -19,7 +19,7 @@ def login(request):
         try:
             details=registration.objects.get(username=username)
             if details.password==password:
-                return render(request,'just/idea.html')
+                return render(request,'just/idea.html')# to be changed
             else:
                 return redirect('/login')
 
