@@ -3,19 +3,58 @@
 <html lang="en" dir="ltr">
 <head>
 <meta charset="utf-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
 <title>Input Animation | CodingNepal</title>
 <link rel="stylesheet" href="{% static 'just/result/idea.css' %}">
 </head>
-<body>
+<body style="display: flex;justify-content: space-around">
 <div class="wrapper">
 <div class="input-data">
-<input type="text">
+<input type="text" id="input">
 <label>ENTER IDEA</label>
 <br>
 <br>
-<input type="submit" name="" value="SUBMIT">
+<input type="submit" name="" value="SUBMIT" onclick="sort()">
 <div class="underline"></div>
 </div>
 </div>
+<div style="width: 50%;height: 700px;background: white;padding: 20px;" >
+        <div><h1 style="text-align: center;">IDEAS</h1></div>
+        <div id="result" style="overflow: scroll;height: 600px;">
+
+        </div>
+    </div>
 </body>
+<script type="text/javascript">
+    var received_data  = {{ data|safe }};
+    let ideas=received_data['IDEAS'];
+    let min_range=received_data['INVESTMENT-MIN'];
+    let max_renge=received_data['INVESTMENT-MAX'];
+    let result=document.getElementById('result');
+    for(i=0;i<23;i++) {
+        result.innerHTML += `<div class="alert alert-info" role="alert" style="display: flex;justify-content: space-between;"><div>`+ideas[i]+`</div><div>Bugdet : `+max_renge[i]+` - `+min_range[i]+`</div></div>`;
+    }
+    function sort(){
+        let input=(document.getElementById("input").value);
+        let idea=received_data['IDEAS'];
+        let min_range=received_data['INVESTMENT-MIN'];
+        let max_renge=received_data['INVESTMENT-MAX'];
+        let result=document.getElementById('result');
+        result.innerHTML="";
+
+        let   filter, i, txtValue;
+
+        filter = input.toUpperCase();
+
+        for (i = 0; i < 23; i++) {
+            txtValue = idea[i];
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                result.innerHTML += `<div class="alert alert-info" role="alert" style="display: flex;justify-content: space-between;"><div>` + ideas[i] + `</div><div>Bugdet : ` + max_renge[i] + ` - ` + min_range[i] + `</div></div>`;
+            }
+        }
+
+    }
+
+</script>
 </html>

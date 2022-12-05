@@ -22,4 +22,6 @@ urlpatterns = [
    path('just',views.just,name="just"),
    path('login',views.login,name="login"),
    path('register',views.register,name="register"),
+   path('budget',views.budget,name="budget"),
+   path('idea',views.idea,name="idea"),
 ]

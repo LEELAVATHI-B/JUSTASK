@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<head>
+<meta charset="utf-8">
+<title>Input Animation | CodingNepal</title>
+<link rel="stylesheet" href="{% static 'just/result/style.css' %}">
+</head>
+<body style="justify-content: space-around">
+<div class="wrapper">
+<div class="input-data">
+<input type="text" id="input">
+<label>ENTER BUDGET</label>
+<br>
+<br>
+<input type="submit" name="" value="SUBMIT" onclick="sort()">
+<div class="underline"></div>
+</div>
+</div>
+<div style="width: 50%;height: 700px;background: white;padding: 20px;" >
+        <div><h1 style="text-align: center;">IDEAS</h1></div>
+        <div id="result" style="overflow: scroll;height: 600px;">
+
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    var received_data  = {{ data|safe }};
+    let ideas=received_data['IDEAS'];
+    let min_range=received_data['INVESTMENT-MIN'];
+    let max_renge=received_data['INVESTMENT-MAX'];
+    let result=document.getElementById('result');
+    for(i=0;i<23;i++) {
+        result.innerHTML += `<div class="alert alert-info" role="alert">`+ideas[i]+`</div>`;
+    }
+    function sort(){
+        let input=parseInt(document.getElementById("input").value);
+        let ideas=received_data['IDEAS'];
+        let min_range=received_data['INVESTMENT-MIN'];
+        let max_renge=received_data['INVESTMENT-MAX'];
+        let result=document.getElementById('result');
+        result.innerHTML="";
+        for(i=0;i<24;i++) {
+
+            if(input>parseInt(min_range[i]) && input<parseInt(max_renge[i])) {
+                console.log(input);
+                result.innerHTML += `<div class="alert alert-info" role="alert">`+ideas[i]+`</div>`;
+            }
+    }
+    }
+
+</script>
+</html>

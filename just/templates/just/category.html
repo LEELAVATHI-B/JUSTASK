@@ -1,0 +1,16 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'just/result/category.css' %}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+<body style="background: linear-gradient(to right bottom,#4e00ff,#ff0084)">
+<h1>CHOOSE A CATEGORY</h1>
+<div style="width: 400px;height: 50px;display: flex;justify-content: space-around;">
+    <a href="{% url 'budget' %}" style="text-decoration: none;"><div style="width: 120px;height: 50px;padding-top: 8px;border-radius: 10px;" class="kind">
+        <h1 style="color: black;font-size: 20px;text-align: center;">Budget</h1>
+    </div></a>
+    <a href="{% url 'idea' %}" style="text-decoration: none;"><div style="width: 120px;height: 50px;padding-top: 8px;border-radius: 10px;" class="kind">
+        <h1 style="color: black;font-size: 20px;text-align: center;">Idea</h1>
+    </div></a>
+</div>
+</body>
